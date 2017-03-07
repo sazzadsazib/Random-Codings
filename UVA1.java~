@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.Scanner;
+public class UVA1{
+  public static void main (String[]args){
+    try{
+   File task1 = new File("G:\\Github\\Random-Codings\\hajj.txt");
+    Scanner sc = new Scanner (task1);
+    while(true){
+     String str=sc.nextLine();
+     if(str.equals("*"))
+       break;
+     else if(str.equals("Hajj"))
+      System.out.println("Hajj-e-Akbar"); 
+     else if(str.equals("Umrah"))
+      System.out.println("Hajj-e-Asghar");
+    }
+    }
+    catch(FileNotFoundException e){
+      System.out.println("for");
+    }
+  }
+}

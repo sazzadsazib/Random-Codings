@@ -1,0 +1,85 @@
+class test {
+    void cyrusBeakAlgo(int x0,int y0,int x1,int y1) {
+    int dx=x1-x0;
+    int dy=y1-y0;
+    //printf("%d\n",dx);
+    //printf("%d\n",dy);
+
+//    int output=0,output1=0;
+    double tEmax=0;
+    double tLmin=1;
+    double D[4];
+    double W[4];
+
+    for(int i=0; i<4; i++) {
+        if(i==0) {
+                //350,-250,-400,300
+                W[i]=y1-y0;
+                D[i]=y0-Ymax;
+                printf("%d\n",D[i]);
+                printf("%d\n",W[i]);
+
+        }else if(i==1) {
+                W[i]=-(dy);
+                D[i]=-(y0-Ymin);
+            //    printf("%d\n",D[i]);
+        }else if(i==2) {
+                W[i]=dx;
+                D[i]=x0-Xmax;
+                //printf("%d\n",D[i]);
+        }else if(i==3) {
+                W[i]=-dx;
+                D[i]=-(x0-Xmin);
+            //    printf("%d\n",D[i]);
+        }
+
+        double tL;
+        double tE;
+        if(D[i]>0) {
+            tL=-(D[i]/W[i]);
+
+        }else {
+            tE=-(D[i]/W[i]);
+        }
+        if(tE>tEmax) {
+            tEmax=tE;
+        }
+        if(tL>tEmax) {
+            tLmin=tL;
+
+        }
+
+
+
+    }
+
+
+
+    if( !((tEmax <0 || tEmax>1) && (tLmin>0 || tLmin<1)) && !(tEmax>tLmin) ) {
+        //printf("%f",tEmax);
+        //printf("%f",tLmin);
+
+    x0=x0+(x1-x0)*tEmax;
+    y0=y0+(y1-y0)*tEmax;
+    x1=x0+(x1-x0)*tLmin;
+    y1=y0+(y1-y0)*tLmin;
+    }
+   glColor4f(0.8,5.1,0.35,1.0); // set the point color
+    glPointSize(6.0); // set the point size
+    CircleAlgorithm(x0,y0,5);
+    CircleAlgorithm(x1,y1,5);
+    for(int u=0; u<4; u++) {
+            //printf("%d\n",D[u]);
+        }
+
+}
+    public static void main(String[] args) {
+          cyrusBeakAlgo(350,-250,-400,300);
+         // cyrusBeakAlgo(-400,300,350,-250);
+        
+        
+    }
+}
+        
+        
+        

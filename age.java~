@@ -1,0 +1,13 @@
+import java.util.*;
+class age{
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER YOUR AGE YEARS");
+        int a=sc.nextInt();
+        System.out.println("ENTER YOUR AGE DAY LEFT");
+        int b=sc.nextInt();
+        
+        int ans= (a*365)+((a/4))+b;
+        System.out.println(ans);
+    }
+}

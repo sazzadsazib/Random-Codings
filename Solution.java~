@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int integer = input.nextInt();
+        double decimal = input.nextDouble();
+        String word = input.nextLine();
+        System.out.println(integer);
+        System.out.println(decimal);
+        System.out.println(word);
+    }
+}

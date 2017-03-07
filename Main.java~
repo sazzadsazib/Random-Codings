@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=0; i<n; i++) {
+            Double A=sc.nextDouble();
+            Double B=sc.nextDouble();
+            Double inc=sc.nextDouble();
+            Double sum=A+B;
+            Double working=sum/3;
+            Double iA=A-working;
+            Double iB=B-working;
+            Double ans=(iA/3)*inc;
+            String s=""+ans;
+            StringTokenizer st = new StringTokenizer(s,".");
+            s=st.nextToken();
+           System.out.println(s);
+        }
+  
+    }
+}
